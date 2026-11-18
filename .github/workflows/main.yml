@@ -14,6 +14,8 @@ jobs:
         with:
           gradle-version: 8.7
       - run: cd SeeAndLearn && gradle assembleDebug
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
       - uses: actions/upload-artifact@v4
         with:
           name: app
